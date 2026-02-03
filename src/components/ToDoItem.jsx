@@ -1,12 +1,12 @@
 import { FaTrash, FaEdit, FaCheckCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 
-const ToDoItem = ({ todo }) => {
+const ToDoItem = ({ todo, handleDelete }) => {
   return (
     <div className="todoItem">
       <span className="todoItem--span">{todo.title}</span>
       <div className="todoItem--icons">
-        <button>
+        <button onClick={() => handleDelete(todo.id)}>
           <FaTrash />
         </button>
         <button>

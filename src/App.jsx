@@ -18,6 +18,11 @@ const App = () => {
     });
     setItem("");
   };
+
+  const handleDelete = (id) => {
+    const itemsLeft = todos.filter((todo) => todo.id !== id);
+    setTodos(itemsLeft);
+  };
   return (
     <div className="container">
       <Header />
@@ -32,7 +37,7 @@ const App = () => {
           Add Todos
         </button>
       </div>
-      <ToDoList todos={todos} />
+      <ToDoList todos={todos} handleDelete={handleDelete} />
     </div>
   );
 };
