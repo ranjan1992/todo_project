@@ -10,7 +10,6 @@ const ToDoItem = ({ todo }) => {
           <FaTrash />
         </button>
         <button>
-          {" "}
           <FaEdit />
         </button>
         <button>
