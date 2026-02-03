@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { FaTrash, FaEdit, FaCheckCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 
 const ToDoItem = ({ todo, handleDelete, handleEdit }) => {
+  const [toggle, setToggle] = useState(false);
+  const [iscomplete, setIsComplete] = useState(false);
+
+  const handleClick = (todo) => {
+    setToggle(!toggle);
+    todo.completed = !toggle;
+    setIsComplete(todo.completed);
+  };
   return (
-    <div className="todoItem">
+    <div className={`todoItem ${iscomplete && "stroke"}`}>
       <span className="todoItem--span">{todo.title}</span>
       <div className="todoItem--icons">
         <button onClick={() => handleDelete(todo.id)}>
@@ -12,8 +21,8 @@ const ToDoItem = ({ todo, handleDelete, handleEdit }) => {
         <button onClick={() => handleEdit(todo)}>
           <FaEdit />
         </button>
-        <button>
-          <FaCheckCircle />
+        <button onClick={() => handleClick(todo)}>
+          {!toggle ? <FaRegCircle /> : <FaCheckCircle />}
         </button>
         {/* <button>
           <FaRegCircle />

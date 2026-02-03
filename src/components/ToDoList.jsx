@@ -5,7 +5,7 @@ const ToDoList = ({ todos, handleDelete, handleEdit }) => {
     <div className="todo_container">
       {todos.map((todo) => (
         <ToDoItem
-          key={todo.item}
+          key={todo.id}
           todo={todo}
           handleDelete={handleDelete}
           handleEdit={handleEdit}

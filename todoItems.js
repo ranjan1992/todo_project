@@ -9,19 +9,4 @@ export const todosItems = [
     title: "Go for a 30-minute walk",
     completed: true,
   },
-  {
-    id: "3",
-    title: "Practice Java programming",
-    completed: false,
-  },
-  {
-    id: "4",
-    title: "Prepare lesson plan for students",
-    completed: false,
-  },
-  {
-    id: "5",
-    title: "Read 20 pages of a book",
-    completed: false,
-  },
 ];
